@@ -245,15 +245,6 @@
                   <li>
                     <a href="#ohlcv" class="toc-h2 toc-link" data-title="ohlcv">OHLCV</a>
                   </li>
-                  <li>
-                    <a href="#login" class="toc-h2 toc-link" data-title="login">Login</a>
-                  </li>
-                  <li>
-                    <a href="#register-account" class="toc-h2 toc-link" data-title="register-account">Register Account</a>
-                  </li>
-                  <li>
-                    <a href="#forgot-password" class="toc-h2 toc-link" data-title="forgot-password">Forgot password</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -269,16 +260,22 @@
                     <a href="#user-market-view" class="toc-h2 toc-link" data-title="user-market-view">User Market View</a>
                   </li>
                   <li>
-                    <a href="#order-lookup" class="toc-h2 toc-link" data-title="order-lookup">Order Lookup</a>
-                  </li>
-                  <li>
                     <a href="#order-history" class="toc-h2 toc-link" data-title="order-history">Order History</a>
                   </li>
                   <li>
-                    <a href="#withdraws" class="toc-h2 toc-link" data-title="withdraws">Withdraws</a>
+                    <a href="#order-details" class="toc-h2 toc-link" data-title="order-details">Order Details</a>
                   </li>
                   <li>
-                    <a href="#deposits" class="toc-h2 toc-link" data-title="deposits">Deposits</a>
+                    <a href="#withdraw-history" class="toc-h2 toc-link" data-title="withdraw-history">Withdraw History</a>
+                  </li>
+                  <li>
+                    <a href="#withdraw-details" class="toc-h2 toc-link" data-title="withdraw-details">Withdraw Details</a>
+                  </li>
+                  <li>
+                    <a href="#deposit-history" class="toc-h2 toc-link" data-title="deposit-history">Deposit History</a>
+                  </li>
+                  <li>
+                    <a href="#deposit-details" class="toc-h2 toc-link" data-title="deposit-details">Deposit Details</a>
                   </li>
                   <li>
                     <a href="#transfers" class="toc-h2 toc-link" data-title="transfers">Transfers</a>
@@ -294,24 +291,6 @@
                   </li>
                   <li>
                     <a href="#create-buy-limit" class="toc-h2 toc-link" data-title="create-buy-limit">Create Buy Limit</a>
-                  </li>
-                  <li>
-                    <a href="#get-api-keys" class="toc-h2 toc-link" data-title="get-api-keys">Get API Keys</a>
-                  </li>
-                  <li>
-                    <a href="#create-api-key" class="toc-h2 toc-link" data-title="create-api-key">Create API Key</a>
-                  </li>
-                  <li>
-                    <a href="#revoke-api-key" class="toc-h2 toc-link" data-title="revoke-api-key">Revoke API Key</a>
-                  </li>
-                  <li>
-                    <a href="#tfa-setup" class="toc-h2 toc-link" data-title="tfa-setup">TFA Setup</a>
-                  </li>
-                  <li>
-                    <a href="#level-1-verification" class="toc-h2 toc-link" data-title="level-1-verification">Level 1 Verification</a>
-                  </li>
-                  <li>
-                    <a href="#resend-email-verification" class="toc-h2 toc-link" data-title="resend-email-verification">Resend Email Verification</a>
                   </li>
               </ul>
           </li>
@@ -444,34 +423,30 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"markets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"market_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTC"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"market_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOGE"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"market_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTM"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"market_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DASH"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"market_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"markets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"can_cancel"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"can_trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BCH"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+                </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0025"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"can_cancel"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"can_trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+                </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0025"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Get general information about all available markets.</p>
@@ -480,52 +455,70 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <h2 id='market-details'>Market Details</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
      https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/market/1"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/market/[market_id]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"market_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTC"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"recent_trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-09T14:46:19.821263Z"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"can_cancel"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"can_trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"maker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0025"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"market_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="s2">"taker_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0025"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"recent_trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-05T16:09:39.905246Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.99906785"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T17:25:21.675775Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.8586607"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Return details about a specific market.</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/market/1</code></p>
+<p><code>GET https://dev-api.qtrade.io/v1/market/[market_id]</code></p>
 <h2 id='ohlcv'>OHLCV</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
      https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/market/1/ohlcv/{{interval}}"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/market/1/ohlcv/[interval]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"market"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"base_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"market_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTC"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="s2">"recent_trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-09T14:46:19.821263Z"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"slices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-05T16:05:00Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-05T16:10:00Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns OHLCV data for a specific market. Accepts an interval value which returns OHLCV data in chunks of the specified interval duration. </p>
@@ -542,86 +535,7 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <li>&quot;oneday&quot;</li>
 </ul>
 
-<p><code>GET https://dev-api.qtrade.io/v1/market/1/ohlcv/</code></p>
-<h2 id='login'>Login</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     -X POST <span class="se">\</span>
-     -d <span class="s1">'{"email": "t@test.com", "password": "testing12345"}'</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span><span class="s">'email'</span><span class="p">:</span> <span class="s">'t@test.com'</span><span class="p">,</span> <span class="s">'password'</span><span class="p">:</span> <span class="s">'testing12345'</span><span class="p">}</span>
-<span class="n">api</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/v1/login"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t@test.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testing12345"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>200 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Returns a JWT used to authenticate all user actions. This token can be used instead of API key.</p>
-
-<p><code>POST https://dev-api.qtrade.io/v1/login</code></p>
-<h2 id='register-account'>Register Account</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     -X POST <span class="se">\</span>
-     -d <span class="s1">'{"first_name": "test", "last_name": "test", "password": "testing12345", "email": "t@test.com"}'</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'email'</span><span class="p">:</span> <span class="s">'t@test.com'</span><span class="p">,</span>
-  <span class="s">'first_name'</span><span class="p">:</span> <span class="s">'test'</span><span class="p">,</span>
-  <span class="s">'last_name'</span><span class="p">:</span> <span class="s">'test'</span><span class="p">,</span>
-  <span class="s">'password'</span><span class="p">:</span> <span class="s">'testing12345'</span><span class="p">}</span>
-<span class="n">api</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/v1/register"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t@test.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testing12345"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>201 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Register a new user account on qtrade.</p>
-
-<p><code>POST https://dev-api.qtrade.io/v1/register</code></p>
-<h2 id='forgot-password'>Forgot password</h2>
-<blockquote>
-<p>200 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mfgtdwpDuGJquoPubQWPiDa1pwA5aPeYmr"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>400 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Address pool empty, try later"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Sends a prompt to reset your password. Accepts an email address </p>
-
-<p><code>POST https://dev-api.qtrade.io/v1/forgot</code></p>
+<p><code>GET https://dev-api.qtrade.io/v1/market/1/ohlcv/[interval]</code></p>
 <h1 id='private'>Private</h1><h2 id='user-info'>User Info</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
      https://dev-api.qtrade.io/v1/user/me
@@ -631,10 +545,19 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t@test.com"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"can_login"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"can_trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"can_withdraw"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t@test.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"lname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"tfa_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"verified_email"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"withdraw_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -650,19 +573,22 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.00000000"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.00000000"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100000000"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BCH"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99992435.78253015"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTC"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99927153.76074182"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Current useable account balances for a user account. Doesn&#39;t include amounts currently represented in open orders, pending deposits or withdraws.</p>
@@ -671,81 +597,91 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <h2 id='user-market-view'>User Market View</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
      https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/market/1"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/market/[market_id]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"balances"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.00000000"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"val"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.00000000"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"base_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99927153.76074182"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"closed_orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.09102782"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T17:59:36.366493Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13252</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.99896025"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_amount_remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy_limit"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.90682437"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49.37394186"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"base_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.12343485"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T17:59:36.366493Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10289</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.99298105"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.88866999"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"taker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05907856"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"base_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00014769"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T17:59:36.366493Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10288</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0059792"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.88068047"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"taker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"market_balance"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99992435.78253015"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"open_orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49.45063516"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T17:59:35.867526Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13249</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.0007505"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_amount_remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.0007505"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy_limit"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.86398279"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T17:59:27.347006Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13192</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.00245975"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_amount_remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0173805"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell_limit"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.90428849"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49.37366303"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"base_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.12343415"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T17:59:27.531716Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10241</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.98507925"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.90428849"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"taker"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns the currently available <code>base_currency</code> and <code>markey_currency</code>  balances for a user on the given market. These amounts do <strong>not</strong> include amounts currently represented in open orders, pending deposits or withdraws.</p>
 
 <p>Also returns lists of <code>open_orders</code> and <code>closed_orders</code></p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/market/1</code></p>
-<h2 id='order-lookup'>Order Lookup</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/order/{{id}}"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</code></pre>
-<blockquote>
-<p>200 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell_limit"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00500000"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy_limit"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00500000"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Takes an Order ID and returns data about that order</p>
-
-<p><code>GET https://dev-api.qtrade.io/v1/user/order/</code></p>
+<p><code>GET https://dev-api.qtrade.io/v1/user/market/[market_id]</code></p>
 <h2 id='order-history'>Order History</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
      https://dev-api.qtrade.io/v1/user/me
@@ -755,47 +691,63 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell_limit"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00500000"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy_limit"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00500000"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.09102782"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T17:59:36.366493Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13252</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.99896025"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_amount_remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy_limit"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.90682437"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49.37394186"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"base_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.12343485"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T17:59:36.366493Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10289</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.99298105"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.88866999"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"taker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.05907856"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"base_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00014769"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T17:59:36.366493Z"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10288</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0059792"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.88068047"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"taker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"49.33046306"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T17:59:12.941034Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13099</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.9950993"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_amount_remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.9950993"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy_limit"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.85114439"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Fetches the last 200 orders made by your account with all the trades associated.</p>
 
 <p><code>GET https://dev-api.qtrade.io/v1/user/orders</code></p>
-<h2 id='withdraws'>Withdraws</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<h2 id='order-details'>Order Details</h2>
+<p>Takes an Order ID and returns data about that order</p>
+
+<p><code>GET https://dev-api.qtrade.io/v1/user/order/[order_id]</code></p>
+<h2 id='withdraw-history'>Withdraw History</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
      https://dev-api.qtrade.io/v1/user/me
 </code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/withdraws"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -804,29 +756,59 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"withdraws"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13hQVEstgo4iPQZv9C7VELnLWF7UWtF4Q3"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"cancel_requested"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-05T04:10:03.958026Z"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"network_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"needs_create"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns a list of the user&#39;s Withdraws and metadata including <code>id</code>, <code>amount</code>, <code>currency</code>, <code>address</code>, <code>status</code>, <code>network_data</code>, <code>created_at</code> values</p>
 
 <p><code>GET https://dev-api.qtrade.io/v1/user/withdraws</code></p>
-<h2 id='deposits'>Deposits</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+<h2 id='withdraw-details'>Withdraw Details</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
      https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/withdraws"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/withdraw/[withdraw_id]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"withdraw"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13hQVEstgo4iPQZv9C7VELnLWF7UWtF4Q3"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cancel_requested"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-05T04:10:03.958026Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"network_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"needs_create"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Returns a list of the user&#39;s Deposits and metadata including <code>id</code>, <code>amount</code>, <code>currency</code>, <code>address</code>, <code>status</code>, <code>network_data</code>, <code>created_at</code> values</p>
+<p>Takes an Withdraw ID and returns data about that Withdraw</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/withdraws</code></p>
+<p><code>GET https://dev-api.qtrade.io/v1/user/withdraw/[withdraw_id]</code></p>
+<h2 id='deposit-history'>Deposit History</h2>
+<p>Returns a list of the user&#39;s Deposits and metadata including <code>id</code>, <code>amount</code>, <code>currency</code>, <code>address</code>, <code>status</code>, <code>network_data</code>, <code>created_at</code> values.</p>
+
+<p><code>GET https://dev-api.qtrade.io/v1/user/deposits</code></p>
+<h2 id='deposit-details'>Deposit Details</h2>
+<p>Takes an Deposit ID and returns data about that Deposit</p>
+
+<p><code>GET https://dev-api.qtrade.io/v1/user/deposit/[deposit_id]</code></p>
 <h2 id='transfers'>Transfers</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
      https://dev-api.qtrade.io/v1/user/me
@@ -836,20 +818,9 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mfgtdwpDuGJquoPubQWPiDa1pwA5aPeYmr"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/transfers"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</code></pre>
-<blockquote>
-<p>400 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Address pool empty, try later"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"transfers"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns a list of the user&#39;s Transfers and metadata. Transfers are a special internal movement of funds between qTrade users. User created Transfers are not currently supported</p>
@@ -858,10 +829,10 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <h2 id='create-a-withdraw'>Create a Withdraw</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
      -X POST <span class="se">\</span>
-     -d <span class="s1">'{"currency": "LTC", "amount": "0.5", "address": "n4D4LZGnh82gpgFgqoLr6phN7yZMMroAWE"}'</span> <span class="se">\</span>
+     -d <span class="s1">'{"currency": "LTC", "amount": "9.51235432", "address": "n4D4LZGnh82gpgFgqoLr6phN7yZMMroAWE"}'</span> <span class="se">\</span>
      https://dev-api.qtrade.io/v1/user/me
 </code></pre><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'address'</span><span class="p">:</span> <span class="s">'n4D4LZGnh82gpgFgqoLr6phN7yZMMroAWE'</span><span class="p">,</span>
-  <span class="s">'amount'</span><span class="p">:</span> <span class="s">'0.5'</span><span class="p">,</span>
+  <span class="s">'amount'</span><span class="p">:</span> <span class="s">'9.51235432'</span><span class="p">,</span>
   <span class="s">'currency'</span><span class="p">:</span> <span class="s">'LTC'</span><span class="p">}</span>
 <span class="n">api</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/v1/user/withdraw"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
@@ -870,16 +841,17 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"n4D4LZGnh82gpgFgqoLr6phN7yZMMroAWE"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.51235432"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LTC"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>200 Response </p>
+<p>201 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates a request with Withdraw currency to a specified address. Currency is removed from the balance upon success, the corresponding network transaction may be delayed for up to 5 minutes.</p>
@@ -892,6 +864,11 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </tr>
 </thead><tbody>
 <tr>
+<td>address</td>
+<td>string</td>
+<td>The address to send withdrawn coins</td>
+</tr>
+<tr>
 <td>currency</td>
 <td>string</td>
 <td>The currency code of the currency you&#39;d like to withdraw</td>
@@ -901,11 +878,6 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <td>decimal string</td>
 <td>A string specifying the amount of currency to withdraw</td>
 </tr>
-<tr>
-<td>address</td>
-<td>string</td>
-<td>The address to send withdrawn coins</td>
-</tr>
 </tbody></table>
 
 <p><code>POST https://dev-api.qtrade.io/v1/user/withdraw</code></p>
@@ -914,21 +886,74 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mfgtdwpDuGJquoPubQWPiDa1pwA5aPeYmr"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"disabled"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p>400 Response </p>
+<p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Address pool empty, try later"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"currency_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"offline"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>200 Response </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"n1EFaiFzWbd5VeA5FWe1xqi1KVEsWFj2ni"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>200 Response </p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"n1EFaiFzWbd5VeA5FWe1xqi1KVEsWFj2ni"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degraded"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Returns a deposit address for sending money to your exchange account. This address should rarely change, but it is good practice to fetch it before sending currency every time.</p>
 
-<p><code>POST https://dev-api.qtrade.io/v1/user/deposit_address/</code></p>
+<p>The returned <code>currency_status</code> key may be one of 4 values:</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Returns address</th>
+<th>Use case</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>ok</code></td>
+<td>Yes</td>
+<td>Kinda self explainatory</td>
+</tr>
+<tr>
+<td><code>degraded</code></td>
+<td>Yes</td>
+<td>Down for maintenance. Funds will be credited once maintenance is completed</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td>No</td>
+<td>Deposits temporarily disabled due to network issues. Typically due to excessive forking, stalled chain, or consesus issues</td>
+</tr>
+<tr>
+<td><code>offline</code></td>
+<td>No</td>
+<td>Currency is delisted and deposits are no longer accepted</td>
+</tr>
+</tbody></table>
+
+<p><code>POST https://dev-api.qtrade.io/v1/user/deposit_address/[currency_key]</code></p>
 <h2 id='create-sell-limit'>Create Sell Limit</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
      -X POST <span class="se">\</span>
@@ -950,8 +975,38 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T20:46:52.899248Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13253</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"market_amount_remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell_limit"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.27834267"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"base_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00069585"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02820645"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.86805058"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"taker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.58970687"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"base_fee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.02397426"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.97179355"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.86804952"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"taker"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates an order to sell a currency at the specified price. Amount will be removed from your balance immediately. Returns the created order id.</p>
@@ -960,195 +1015,43 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <h2 id='create-buy-limit'>Create Buy Limit</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
      -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
      -X POST <span class="se">\</span>
-     -d <span class="s1">'{"amount": "0.5", "price": "0.01", "market_id": 1}'</span> <span class="se">\</span>
+     -d <span class="s1">'{"amount": "10", "price": "0.1", "market_id": 1}'</span> <span class="se">\</span>
      https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span><span class="s">'amount'</span><span class="p">:</span> <span class="s">'0.5'</span><span class="p">,</span> <span class="s">'market_id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="s">'0.01'</span><span class="p">}</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span><span class="s">'amount'</span><span class="p">:</span> <span class="s">'10'</span><span class="p">,</span> <span class="s">'market_id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="s">'0.1'</span><span class="p">}</span>
 <span class="n">api</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/v1/user/buy_limit"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>Request</p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p>200 Response </p>
 </blockquote>
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"order"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"base_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0025"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-04-06T20:47:11.966139Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13254</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"market_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"market_amount_remaining"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy_limit"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>Creates an order to buy a currency at the specified price on the specified market. Amount will be removed from your balance immediately. Returns the created order id.</p>
 
 <p><code>POST https://dev-api.qtrade.io/v1/user/buy_limit</code></p>
-<h2 id='get-api-keys'>Get API Keys</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/keys"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</code></pre>
-<blockquote>
-<p>200 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Returns a list of API keys with their description string and permissions</p>
-
-<p><code>GET https://dev-api.qtrade.io/v1/user/keys</code></p>
-<h2 id='create-api-key'>Create API Key</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     -X POST <span class="se">\</span>
-     -d <span class="s1">'{"amount": "0.5", "price": "0.01", "market_id": 1}'</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span><span class="s">'amount'</span><span class="p">:</span> <span class="s">'0.5'</span><span class="p">,</span> <span class="s">'market_id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="s">'0.01'</span><span class="p">}</span>
-<span class="n">api</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/v1/user/buy_limit"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>200 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Allows the authenticated user to generate new API keys for use in limited scope applications.</p>
-
-<p><code>POST https://dev-api.qtrade.io/v1/user/buy_limit</code></p>
-<h2 id='revoke-api-key'>Revoke API Key</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     -X POST <span class="se">\</span>
-     -d <span class="s1">'{"amount": "0.5", "price": "0.01", "market_id": 1}'</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span><span class="s">'amount'</span><span class="p">:</span> <span class="s">'0.5'</span><span class="p">,</span> <span class="s">'market_id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="s">'0.01'</span><span class="p">}</span>
-<span class="n">api</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/v1/user/buy_limit"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.5"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>200 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Allows the authenticated user to revoke an API key.</p>
-
-<p><code>POST https://dev-api.qtrade.io/v1/user/buy_limit</code></p>
-<h2 id='tfa-setup'>TFA Setup</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     -X POST <span class="se">\</span>
-     -d <span class="s1">'{"email": "t@test.com", "password": "testing12345"}'</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span><span class="s">'email'</span><span class="p">:</span> <span class="s">'t@test.com'</span><span class="p">,</span> <span class="s">'password'</span><span class="p">:</span> <span class="s">'testing12345'</span><span class="p">}</span>
-<span class="n">api</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/v1/user/tfa_setup"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</code></pre>
-<blockquote>
-<p>Request</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"t@test.com"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testing12345"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>200 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Request a two-factor authorization key string. This will fail if two-factor auth is already enabled, and the secret will not be valid until it is confirmed on the <code>/user/tfa</code> endpoint</p>
-
-<p><code>POST https://dev-api.qtrade.io/v1/user/tfa_setup</code></p>
-<h2 id='level-1-verification'>Level 1 Verification</h2>
-<blockquote>
-<p>200 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell_limit"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00500000"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"market_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"open"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy_limit"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.01000000"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"trades"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-                </span><span class="p">{</span><span class="w">
-                    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.50000000"</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                    </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00500000"</span><span class="w">
-                </span><span class="p">}</span><span class="w">
-            </span><span class="p">],</span><span class="w">
-            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.00000000"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Request level 1 account verification. Once posted these values are not modifyable. Requires <code>date_of_birth</code>, <code>address</code>, <code>state</code>, <code>city</code>, and <code>country</code></p>
-
-<p><code>POST https://dev-api.qtrade.io/v1/user/verify_level1</code></p>
-<h2 id='resend-email-verification'>Resend Email Verification</h2>
-<blockquote>
-<p>200 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mfgtdwpDuGJquoPubQWPiDa1pwA5aPeYmr"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p>400 Response </p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"error"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Address pool empty, try later"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Resends the email verification letter</p>
-
-<p><code>POST https://dev-api.qtrade.io/v1/user/resendconfirm</code></p>
 <h1 id='postman-collection'>Postman Collection</h1>
 <p>For convenience, you can download a Postman collection to play around with the API.</p>
 
