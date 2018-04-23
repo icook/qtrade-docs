@@ -202,7 +202,7 @@
     <link href="images/favicon.ico" rel="icon" type="image/ico" />
   </head>
 
-  <body class="index" data-languages="[&quot;python&quot;,&quot;shell&quot;]">
+  <body class="index" data-languages="[&quot;python&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -213,7 +213,6 @@
       <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="shell">shell</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -228,9 +227,6 @@
               <ul class="toc-list-h2">
                   <li>
                     <a href="#hmac-authentication-with-an-api-key" class="toc-h2 toc-link" data-title="hmac-authentication-with-an-api-key">HMAC authentication with an API key</a>
-                  </li>
-                  <li>
-                    <a href="#jwt-authentication" class="toc-h2 toc-link" data-title="jwt-authentication">JWT authentication</a>
                   </li>
               </ul>
           </li>
@@ -338,7 +334,7 @@
 <h1 id='authentication'>Authentication</h1>
 <p>qTrade offers JWT and HMAC authentication methods. All requests and responses are the <code>application/json</code> content type return typical HTTP status codes.</p>
 
-<p>This documentation will focus on using HMAC authentication protocols.</p>
+<p>This documentation will only cover HMAC authentication protocols.</p>
 <h2 id='hmac-authentication-with-an-api-key'>HMAC authentication with an API key</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">requests.auth</span>
 <span class="kn">import</span> <span class="nn">base64</span>
@@ -379,7 +375,7 @@
 <span class="n">api</span><span class="o">.</span><span class="n">auth</span> <span class="o">=</span> <span class="n">QtradeAuth</span><span class="p">(</span><span class="s">"1:1111111111111111111111111111111111111111111111111111111111111111"</span><span class="p">)</span>
 
 <span class="c"># Make a call to API</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://dev-api.qtrade.iov1/user/me'</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://api.qtrade.iov1/user/me'</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 </code></pre>
 <p>The HMAC protocol uses an API key issued on the user settings page. API keys have a limited set of permissions and you should always issue a key with the minimum set of permissions needed. API keys may be revoked on the settings page</p>
@@ -409,34 +405,7 @@
 <td><code>/user/sell_limit</code>, <code>/user/buy_limit</code>, <code>/user/cancel_order</code></td>
 </tr>
 </tbody></table>
-<h2 id='jwt-authentication'>JWT authentication</h2><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">import</span> <span class="nn">base64</span>
-<span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">binascii</span>
-<span class="kn">from</span> <span class="nn">hashlib</span> <span class="kn">import</span> <span class="n">sha256</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://dev-api.qtrade.iov1/login'</span><span class="p">,</span>
-        <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s">"email"</span><span class="p">:</span> <span class="s">"test@gmail.com"</span><span class="p">,</span> <span class="s">"password"</span><span class="p">:</span> <span class="s">"test12345"</span><span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<span class="n">api</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer {}"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s">'token'</span><span class="p">])})</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://dev-api.qtrade.io/v1/user/me'</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="nb">export </span><span class="nv">TOKEN</span><span class="o">=</span><span class="k">$(</span>curl -H -q <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-                    -X POST <span class="se">\</span>
-                    -d <span class="s1">'{"email":"t@test.com","password":"test12345"}'</span> <span class="se">\</span>
-                    https://dev-api.qtrade.iov1/login | jq -r <span class="s1">'.data.token'</span><span class="k">)</span>
-</code></pre>
-<p>JWT is a username/password based token authentication. JWT is the method used on the qTrade exchange webpage and grants complete access to all user functions. Some actions in the API are protected by two factor auth (if enabled on the account).</p>
-
-<aside class="notice">
-JWT authentication is not recommended for interacting with the qTrade trade engine due to the increased security burden of properly storing user credentials, two-factor auth, and the full access to all API commands.
-</aside>
-
-<p>If you&#39;d like to build your own front-end for qTrade JWT authentication is probably what you&#39;d want to use.</p>
-<h1 id='public'>Public</h1><h2 id='markets'>Markets</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/markets"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<h1 id='public'>Public</h1><h2 id='markets'>Markets</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/markets"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -470,11 +439,8 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </span></code></pre>
 <p>Get general information about all available markets.</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/markets</code></p>
-<h2 id='market-details'>Market Details</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/market/[market_id]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<p><code>GET https://api.qtrade.io/v1/markets</code></p>
+<h2 id='market-details'>Market Details</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/market/[market_id]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -508,11 +474,8 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </span></code></pre>
 <p>Return details about a specific market.</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/market/[market_id]</code></p>
-<h2 id='currencies'>Currencies</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/currencies"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<p><code>GET https://api.qtrade.io/v1/market/[market_id]</code></p>
+<h2 id='currencies'>Currencies</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/currencies"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -543,10 +506,7 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
         </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/currencies"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span></code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/currencies"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -577,27 +537,24 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </span></code></pre>
 <p>Get general information about all available currencies.</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/currencies</code></p>
+<p><code>GET https://api.qtrade.io/v1/currencies</code></p>
 <h2 id='ticker'>Ticker</h2>
 <p>Get ticker values for the given market. The <code>market_string</code> value should be formatted ala <code>BTC_LTC</code> for the BTC/LTC market.</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/ticker/[market_string]</code></p>
+<p><code>GET https://api.qtrade.io/v1/ticker/[market_string]</code></p>
 <h2 id='ticker-by-id'>Ticker by ID</h2>
 <p>Get ticker values for the given market. The <code>market_id</code> value should be a valid market integer ID. These IDs are returned on the <code>Markets</code> and <code>Market Details</code> endpoints </p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/ticker_by_id/[market_id]</code></p>
+<p><code>GET https://api.qtrade.io/v1/ticker_by_id/[market_id]</code></p>
 <h2 id='orderbook'>Orderbook</h2>
 <p>Get orderbook values for the given market. The <code>market_string</code> value should be formatted ala <code>BTC_LTC</code> for the BTC/LTC market.</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/ticker/[market_string]</code></p>
+<p><code>GET https://api.qtrade.io/v1/ticker/[market_string]</code></p>
 <h2 id='orderbook-by-id'>Orderbook by ID</h2>
 <p>Get orderbook values for the given market. The <code>market_id</code> value should be a valid market integer ID. These IDs are returned on the <code>Markets</code> and <code>Market Details</code> endpoints</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/orderbook_by_id/[market_id]</code></p>
-<h2 id='ohlcv'>OHLCV</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/market/1/ohlcv/[interval]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<p><code>GET https://api.qtrade.io/v1/orderbook_by_id/[market_id]</code></p>
+<h2 id='ohlcv'>OHLCV</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/market/1/ohlcv/[interval]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -639,11 +596,8 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <li>&quot;oneday&quot;</li>
 </ul>
 
-<p><code>GET https://dev-api.qtrade.io/v1/market/1/ohlcv/[interval]</code></p>
-<h1 id='private'>Private</h1><h2 id='user-info'>User Info</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/me"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<p><code>GET https://api.qtrade.io/v1/market/1/ohlcv/[interval]</code></p>
+<h1 id='private'>Private</h1><h2 id='user-info'>User Info</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/me"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -667,11 +621,8 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </span></code></pre>
 <p>Fetch general information about the authenticated user account.</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/me</code></p>
-<h2 id='balances'>Balances</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/balances"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<p><code>GET https://api.qtrade.io/v1/user/me</code></p>
+<h2 id='balances'>Balances</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/balances"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -697,11 +648,8 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </span></code></pre>
 <p>Current useable account balances for a user account. Doesn&#39;t include amounts currently represented in open orders, pending deposits or withdraws.</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/balances</code></p>
-<h2 id='user-market-view'>User Market View</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/market/[market_id]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<p><code>GET https://api.qtrade.io/v1/user/balances</code></p>
+<h2 id='user-market-view'>User Market View</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/market/[market_id]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -785,11 +733,8 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 
 <p>Also returns lists of <code>open_orders</code> and <code>closed_orders</code></p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/market/[market_id]</code></p>
-<h2 id='order-history'>Order History</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/orders"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<p><code>GET https://api.qtrade.io/v1/user/market/[market_id]</code></p>
+<h2 id='order-history'>Order History</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/orders"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -846,19 +791,16 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </span></code></pre>
 <p>Fetches the last 200 orders made by your account with all the trades associated.</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/orders</code></p>
+<p><code>GET https://api.qtrade.io/v1/user/orders</code></p>
 <h2 id='order-details'>Order Details</h2>
 <p>Takes an Order ID and returns data about that order</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/order/[order_id]</code></p>
+<p><code>GET https://api.qtrade.io/v1/user/order/[order_id]</code></p>
 <h2 id='cancel-order'>Cancel Order</h2>
 <p>Takes an Order ID</p>
 
-<p><code>POST https://dev-api.qtrade.io/v1/user/cancel_order</code></p>
-<h2 id='withdraw-history'>Withdraw History</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/withdraws"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<p><code>POST https://api.qtrade.io/v1/user/cancel_order</code></p>
+<h2 id='withdraw-history'>Withdraw History</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/withdraws"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -882,11 +824,8 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </span></code></pre>
 <p>Returns a list of the user&#39;s Withdraws and metadata including <code>id</code>, <code>amount</code>, <code>currency</code>, <code>address</code>, <code>status</code>, <code>network_data</code>, <code>created_at</code> values</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/withdraws</code></p>
-<h2 id='withdraw-details'>Withdraw Details</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/withdraw/[withdraw_id]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<p><code>GET https://api.qtrade.io/v1/user/withdraws</code></p>
+<h2 id='withdraw-details'>Withdraw Details</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/withdraw/[withdraw_id]"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -908,19 +847,16 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </span></code></pre>
 <p>Takes an Withdraw ID and returns data about that Withdraw</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/withdraw/[withdraw_id]</code></p>
+<p><code>GET https://api.qtrade.io/v1/user/withdraw/[withdraw_id]</code></p>
 <h2 id='deposit-history'>Deposit History</h2>
 <p>Returns a list of the user&#39;s Deposits and metadata including <code>id</code>, <code>amount</code>, <code>currency</code>, <code>address</code>, <code>status</code>, <code>network_data</code>, <code>created_at</code> values.</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/deposits</code></p>
+<p><code>GET https://api.qtrade.io/v1/user/deposits</code></p>
 <h2 id='deposit-details'>Deposit Details</h2>
 <p>Takes an Deposit ID and returns data about that Deposit</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/deposit/[deposit_id]</code></p>
-<h2 id='transfers'>Transfers</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/transfers"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<p><code>GET https://api.qtrade.io/v1/user/deposit/[deposit_id]</code></p>
+<h2 id='transfers'>Transfers</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/transfers"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
 <p>200 Response </p>
@@ -933,13 +869,8 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </span></code></pre>
 <p>Returns a list of the user&#39;s Transfers and metadata. Transfers are a special internal movement of funds between qTrade users. User created Transfers are not currently supported</p>
 
-<p><code>GET https://dev-api.qtrade.io/v1/user/transfers</code></p>
-<h2 id='create-a-withdraw'>Create a Withdraw</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     -X POST <span class="se">\</span>
-     -d <span class="s1">'{"currency": "LTC", "amount": "9.51235432", "address": "n4D4LZGnh82gpgFgqoLr6phN7yZMMroAWE"}'</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'address'</span><span class="p">:</span> <span class="s">'n4D4LZGnh82gpgFgqoLr6phN7yZMMroAWE'</span><span class="p">,</span>
+<p><code>GET https://api.qtrade.io/v1/user/transfers</code></p>
+<h2 id='create-a-withdraw'>Create a Withdraw</h2><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span> <span class="s">'address'</span><span class="p">:</span> <span class="s">'n4D4LZGnh82gpgFgqoLr6phN7yZMMroAWE'</span><span class="p">,</span>
   <span class="s">'amount'</span><span class="p">:</span> <span class="s">'9.51235432'</span><span class="p">,</span>
   <span class="s">'currency'</span><span class="p">:</span> <span class="s">'LTC'</span><span class="p">}</span>
 <span class="n">api</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/v1/user/withdraw"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
@@ -972,9 +903,9 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </tr>
 </thead><tbody>
 <tr>
-<td>amount</td>
-<td>decimal string</td>
-<td>A string specifying the amount of currency to withdraw</td>
+<td>address</td>
+<td>string</td>
+<td>The address to send withdrawn coins</td>
 </tr>
 <tr>
 <td>currency</td>
@@ -982,13 +913,13 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 <td>The currency code of the currency you&#39;d like to withdraw</td>
 </tr>
 <tr>
-<td>address</td>
-<td>string</td>
-<td>The address to send withdrawn coins</td>
+<td>amount</td>
+<td>decimal string</td>
+<td>A string specifying the amount of currency to withdraw</td>
 </tr>
 </tbody></table>
 
-<p><code>POST https://dev-api.qtrade.io/v1/user/withdraw</code></p>
+<p><code>POST https://api.qtrade.io/v1/user/withdraw</code></p>
 <h2 id='get-deposit-address'>Get Deposit Address</h2>
 <blockquote>
 <p>200 Response </p>
@@ -1061,13 +992,8 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </tr>
 </tbody></table>
 
-<p><code>POST https://dev-api.qtrade.io/v1/user/deposit_address/[currency_key]</code></p>
-<h2 id='create-sell-limit'>Create Sell Limit</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     -X POST <span class="se">\</span>
-     -d <span class="s1">'{"amount": "1", "price": "0.01", "market_id": 1}'</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span><span class="s">'amount'</span><span class="p">:</span> <span class="s">'1'</span><span class="p">,</span> <span class="s">'market_id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="s">'0.01'</span><span class="p">}</span>
+<p><code>POST https://api.qtrade.io/v1/user/deposit_address/[currency_key]</code></p>
+<h2 id='create-sell-limit'>Create Sell Limit</h2><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span><span class="s">'amount'</span><span class="p">:</span> <span class="s">'1'</span><span class="p">,</span> <span class="s">'market_id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="s">'0.01'</span><span class="p">}</span>
 <span class="n">api</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/v1/user/sell_limit"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
@@ -1119,13 +1045,8 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </span></code></pre>
 <p>Creates an order to sell a currency at the specified price. Amount will be removed from your balance immediately. Returns the created order id.</p>
 
-<p><code>POST https://dev-api.qtrade.io/v1/user/sell_limit</code></p>
-<h2 id='create-buy-limit'>Create Buy Limit</h2><pre class="highlight shell tab-shell"><code>curl -H <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-     -H <span class="s2">"Authorization: Bearer </span><span class="k">${</span><span class="nv">TOKEN</span><span class="k">}</span><span class="s2">"</span> <span class="se">\</span>
-     -X POST <span class="se">\</span>
-     -d <span class="s1">'{"amount": "10", "price": "0.1", "market_id": 1}'</span> <span class="se">\</span>
-     https://dev-api.qtrade.io/v1/user/me
-</code></pre><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span><span class="s">'amount'</span><span class="p">:</span> <span class="s">'10'</span><span class="p">,</span> <span class="s">'market_id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="s">'0.1'</span><span class="p">}</span>
+<p><code>POST https://api.qtrade.io/v1/user/sell_limit</code></p>
+<h2 id='create-buy-limit'>Create Buy Limit</h2><pre class="highlight python tab-python"><code><span class="n">req</span> <span class="o">=</span> <span class="p">{</span><span class="s">'amount'</span><span class="p">:</span> <span class="s">'10'</span><span class="p">,</span> <span class="s">'market_id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">'price'</span><span class="p">:</span> <span class="s">'0.1'</span><span class="p">}</span>
 <span class="n">api</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/v1/user/buy_limit"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">req</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
@@ -1159,7 +1080,7 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
 </span></code></pre>
 <p>Creates an order to buy a currency at the specified price on the specified market. Amount will be removed from your balance immediately. Returns the created order id.</p>
 
-<p><code>POST https://dev-api.qtrade.io/v1/user/buy_limit</code></p>
+<p><code>POST https://api.qtrade.io/v1/user/buy_limit</code></p>
 <h1 id='postman-collection'>Postman Collection</h1>
 <p>For convenience, you can download a Postman collection to play around with the API.</p>
 
@@ -1207,7 +1128,6 @@ JWT authentication is not recommended for interacting with the qTrade trade engi
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="shell">shell</a>
           </div>
       </div>
     </div>
