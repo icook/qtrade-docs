@@ -549,7 +549,7 @@
 <h2 id='orderbook'>Orderbook</h2>
 <p>Get orderbook values for the given market. The <code>market_string</code> value should be formatted ala <code>BTC_LTC</code> for the BTC/LTC market.</p>
 
-<p><code>GET https://api.qtrade.io/v1/orderbook/[market_string]</code></p>
+<p><code>GET https://api.qtrade.io/v1/ticker/[market_string]</code></p>
 <h2 id='orderbook-by-id'>Orderbook by ID</h2>
 <p>Get orderbook values for the given market. The <code>market_id</code> value should be a valid market integer ID. These IDs are returned on the <code>Markets</code> and <code>Market Details</code> endpoints</p>
 
@@ -903,9 +903,9 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>amount</td>
-<td>decimal string</td>
-<td>A string specifying the amount of currency to withdraw</td>
+<td>currency</td>
+<td>string</td>
+<td>The currency code of the currency you&#39;d like to withdraw</td>
 </tr>
 <tr>
 <td>address</td>
@@ -913,9 +913,9 @@
 <td>The address to send withdrawn coins</td>
 </tr>
 <tr>
-<td>currency</td>
-<td>string</td>
-<td>The currency code of the currency you&#39;d like to withdraw</td>
+<td>amount</td>
+<td>decimal string</td>
+<td>A string specifying the amount of currency to withdraw</td>
 </tr>
 </tbody></table>
 
