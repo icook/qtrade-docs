@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "qTrade Docs",
-		"_postman_id": "9baf281d-527f-fdd6-3a16-d1ede6dba161",
+		"_postman_id": "dfdb3f98-8c75-b815-efe2-47d1002b8aa1",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,10 +11,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "{{url}}/v1/markets",
 					"host": [
@@ -29,15 +26,12 @@
 			},
 			"response": [
 				{
-					"id": "4ef1cd00-31d1-4833-aebb-70ab32ca7cd3",
+					"id": "62044e94-632a-4d6d-8aa7-f4cb6edcfcce",
 					"name": "Markets",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/markets",
 							"host": [
@@ -90,10 +84,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "{{url}}/v1/market/[market_id]",
 					"host": [
@@ -109,15 +100,12 @@
 			},
 			"response": [
 				{
-					"id": "f2e0b785-e262-4169-9661-1819995473f1",
+					"id": "bbc8296a-3a11-4b5e-bf73-f462c4b7663e",
 					"name": "Market Details",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/market/1",
 							"host": [
@@ -171,10 +159,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "{{url}}/v1/currencies",
 					"host": [
@@ -189,15 +174,12 @@
 			},
 			"response": [
 				{
-					"id": "a9c8a9d3-259c-4627-a0dd-802ddd3c6812",
+					"id": "89b58e8e-2698-4c7c-a668-180e7350f951",
 					"name": "Markets",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/markets",
 							"host": [
@@ -244,15 +226,12 @@
 					"body": "{\"data\":{\"markets\":[{\"id\":2,\"market_currency\":\"BCH\",\"base_currency\":\"BTC\",\"maker_fee\":\"0.0025\",\"taker_fee\":\"0.0025\",\"metadata\":{},\"can_trade\":true,\"can_cancel\":true},{\"id\":1,\"market_currency\":\"LTC\",\"base_currency\":\"BTC\",\"maker_fee\":\"0.0025\",\"taker_fee\":\"0.0025\",\"metadata\":{},\"can_trade\":true,\"can_cancel\":true}]}}"
 				},
 				{
-					"id": "180463f8-c61c-4cc7-a462-c3139243846a",
+					"id": "98e8808e-d6f0-4b30-8453-b9d92266e37a",
 					"name": "Currencies",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/currencies",
 							"host": [
@@ -305,10 +284,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "{{url}}/v1/ticker/[market_string]",
 					"host": [
@@ -478,12 +454,9 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
-					"raw": "{{url}}/v1/ticker/[market_string]",
+					"raw": "{{url}}/v1/orderbook/[market_string]",
 					"host": [
 						"{{url}}"
 					],
@@ -502,10 +475,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "{{url}}/v1/orderbook_by_id/[market_id]",
 					"host": [
@@ -526,10 +496,7 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "{{url}}/v1/market/1/ohlcv/[interval]",
 					"host": [
@@ -547,15 +514,12 @@
 			},
 			"response": [
 				{
-					"id": "53ffeb26-24d6-4ff3-b7b3-f8b082a3337e",
+					"id": "3af532c6-bef7-42c9-ac33-cc0ab8e9e0b2",
 					"name": "OHLCV",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/market/1/ohlcv/{{interval}}",
 							"host": [
@@ -645,7 +609,7 @@
 			},
 			"response": [
 				{
-					"id": "66d40479-6ce8-49d4-b077-164a16748569",
+					"id": "2b5c1392-38ea-42c5-8ffc-2b1a3958df1a",
 					"name": "User Info",
 					"originalRequest": {
 						"method": "GET",
@@ -722,10 +686,7 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "{{url}}/v1/user/balances",
 					"host": [
@@ -741,15 +702,12 @@
 			},
 			"response": [
 				{
-					"id": "b92ef1df-2393-48a3-953d-28516e54a45d",
+					"id": "7d34638d-afa0-436c-ac0b-bc27671ba537",
 					"name": "Balances",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/user/balances",
 							"host": [
@@ -813,10 +771,7 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "{{url}}/v1/user/market/[market_id]",
 					"host": [
@@ -833,15 +788,12 @@
 			},
 			"response": [
 				{
-					"id": "dbc6305d-7215-4fa7-aeb5-c868bec08027",
+					"id": "2ec90ccb-94a3-4045-af95-f96ed15abef7",
 					"name": "User Market View",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/user/market/1",
 							"host": [
@@ -906,10 +858,7 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "{{url}}/v1/user/orders",
 					"host": [
@@ -925,15 +874,12 @@
 			},
 			"response": [
 				{
-					"id": "b2b70db9-a82a-4c38-b464-5b02e3afdf6a",
+					"id": "41aac9e1-e587-4a21-ac08-59a18366ac74",
 					"name": "Order History",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/user/orders",
 							"host": [
@@ -997,10 +943,7 @@
 				},
 				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "{{url}}/v1/user/order/[order_id]",
 					"host": [
@@ -1037,12 +980,9 @@
 						"value": "4"
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
-					"raw": "{{url}}/v1/user/cancel_order?",
+					"raw": "{{url}}/v1/user/cancel_order",
 					"host": [
 						"{{url}}"
 					],
@@ -1103,14 +1043,15 @@
 			},
 			"response": [
 				{
-					"id": "cf45bc61-c77d-4ced-a749-994e5142722f",
+					"id": "3ac63c4a-f9e8-4ba7-b541-d08f02887c31",
 					"name": "Withdraws",
 					"originalRequest": {
 						"method": "GET",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json"
+								"value": "application/json",
+								"disabled": false
 							}
 						],
 						"body": {
@@ -1205,7 +1146,7 @@
 			},
 			"response": [
 				{
-					"id": "c2ebf6fc-136f-4df2-b615-2477c79580f9",
+					"id": "14d4182f-0c6a-4dc1-a583-517a5690c1a6",
 					"name": "Withdraw Details",
 					"originalRequest": {
 						"method": "GET",
@@ -1386,7 +1327,7 @@
 			},
 			"response": [
 				{
-					"id": "57c3f623-b1d1-4df3-bbbf-6085f2b90e94",
+					"id": "499271ab-5b32-449e-86e3-403aaafb7ffa",
 					"name": "Transfers",
 					"originalRequest": {
 						"method": "GET",
@@ -1487,14 +1428,15 @@
 			},
 			"response": [
 				{
-					"id": "068c60c0-30e7-4c05-88ab-5d1cd4736541",
+					"id": "3012921c-90be-4fb0-b9d2-23f80078ff34",
 					"name": "Create a Withdraw",
 					"originalRequest": {
 						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json"
+								"value": "application/json",
+								"disabled": false
 							}
 						],
 						"body": {
@@ -1564,10 +1506,7 @@
 				},
 				"method": "POST",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
+				"body": {},
 				"url": {
 					"raw": "{{url}}/v1/user/deposit_address/[currency_key]",
 					"host": [
@@ -1584,15 +1523,12 @@
 			},
 			"response": [
 				{
-					"id": "8ac3e9cd-f3cb-406a-a3a7-86835c427d50",
+					"id": "c6d37eb7-5012-48c6-a578-58fe12da55fb",
 					"name": "Get Deposit Address - disabled",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/user/deposit_address/[currency_key]",
 							"host": [
@@ -1616,15 +1552,12 @@
 					"body": "{\"data\":{\"currency_status\":\"disabled\"}}"
 				},
 				{
-					"id": "73cc72ee-aaf6-4fb1-a9d6-a9b96114821f",
+					"id": "21d47611-816e-4c3f-9e0e-d19a0bef8b96",
 					"name": "Get Deposit Address - offline",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/user/deposit_address/[currency_key]",
 							"host": [
@@ -1648,15 +1581,12 @@
 					"body": "{\"data\":{\"currency_status\":\"offline\"}}"
 				},
 				{
-					"id": "abc208ea-4e56-48b9-bcc5-aa4ba8ea199a",
+					"id": "4285b26d-ba57-44a5-8574-6ef9e0cc63c6",
 					"name": "Get Deposit Address - ok",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/user/deposit_address/[currency_key]",
 							"host": [
@@ -1680,15 +1610,12 @@
 					"body": "{\"data\":{\"address\":\"n1EFaiFzWbd5VeA5FWe1xqi1KVEsWFj2ni\",\"currency_status\":\"ok\"}}"
 				},
 				{
-					"id": "8db70e12-22a4-4265-9962-2686c0f95522",
+					"id": "738e1fea-f2f6-4d81-9dba-0a5d8968bd81",
 					"name": "Get Deposit Address - degraded",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{url}}/v1/user/deposit_address/[currency_key]",
 							"host": [
@@ -1752,7 +1679,7 @@
 			},
 			"response": [
 				{
-					"id": "f15dc5a7-38cd-441a-93dc-41ec12762b91",
+					"id": "dd322fe5-6234-4047-b9f3-6d882e63fd0f",
 					"name": "Create Sell Limit",
 					"originalRequest": {
 						"method": "POST",
@@ -1853,7 +1780,7 @@
 			},
 			"response": [
 				{
-					"id": "251f9e6f-77ce-4ada-aae0-5f633cebebd5",
+					"id": "6470caed-92c5-4ebe-abe4-cae56ed4363c",
 					"name": "Create Buy Limit",
 					"originalRequest": {
 						"method": "POST",

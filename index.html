@@ -360,7 +360,10 @@
         <span class="n">request_details</span> <span class="o">+=</span> <span class="n">url_obj</span><span class="o">.</span><span class="n">path</span> <span class="o">+</span> <span class="n">url_obj</span><span class="o">.</span><span class="n">params</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
         <span class="n">request_details</span> <span class="o">+=</span> <span class="n">timestamp</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
         <span class="k">if</span> <span class="n">req</span><span class="o">.</span><span class="n">body</span><span class="p">:</span>
-            <span class="n">request_details</span> <span class="o">+=</span> <span class="n">req</span><span class="o">.</span><span class="n">body</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">req</span><span class="o">.</span><span class="n">body</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="n">request_details</span> <span class="o">+=</span> <span class="n">req</span><span class="o">.</span><span class="n">body</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">request_details</span> <span class="o">+=</span> <span class="n">req</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">request_details</span> <span class="o">+=</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
         <span class="n">request_details</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">key</span>
@@ -791,7 +794,7 @@
 <h2 id='orderbook'>Orderbook</h2>
 <p>Get orderbook values for the given market. The <code>market_string</code> value should be formatted ala <code>BTC_LTC</code> for the BTC/LTC market.</p>
 
-<p><code>GET https://api.qtrade.io/v1/ticker/[market_string]</code></p>
+<p><code>GET https://api.qtrade.io/v1/orderbook/[market_string]</code></p>
 <h2 id='orderbook-by-id'>Orderbook by ID</h2>
 <p>Get orderbook values for the given market. The <code>market_id</code> value should be a valid market integer ID. These IDs are returned on the <code>Markets</code> and <code>Market Details</code> endpoints</p>
 
@@ -1041,7 +1044,7 @@
 <h2 id='cancel-order'>Cancel Order</h2>
 <p>Takes an Order ID</p>
 
-<p><code>POST https://api.qtrade.io/v1/user/cancel_order?</code></p>
+<p><code>POST https://api.qtrade.io/v1/user/cancel_order</code></p>
 <h2 id='withdraw-history'>Withdraw History</h2><pre class="highlight python tab-python"><code><span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/v1/user/withdraws"</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </code></pre>
 <blockquote>
